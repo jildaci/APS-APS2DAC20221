@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>PÁGINA DE EDIÇÃO</title>
+</h:head>
+<h:body>
+	<p:panel header="EDITAR">
+
+		<h:form>
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+			<h:inputHidden value="#{jogoBean.jogo.id}" />
+			
+			<p:panelGrid columns="2">		
+			
+				<p:outputLabel value="Descrição : " style="font-weight:bold" />					
+				<p:inputText size="4" value="#{jogoBean.jogo.descricao}" />
+				
+				<p:outputLabel value="Data da Criação" style="font-weight:bold"/>
+				<h:outputText value="#{jogoBean.jogo.dataCriancao}" />
+				
+				<p:outputLabel value="v1" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v1}" />
+				
+				<p:outputLabel value="v2" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v2}" />
+				
+				<p:outputLabel value="v3" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v3}" />
+				
+				<p:outputLabel value="v4" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v4}" />
+				
+				<p:outputLabel value="v5" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v5}" />
+				
+				<p:outputLabel value="v6" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v6}" />
+				
+				<p:outputLabel value="v7" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v7}" />
+				
+				<p:outputLabel value="v8" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v8}" />
+				
+				<p:outputLabel value="v9" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v9}" />
+				
+				<p:outputLabel value="v10" style="font-weight:bold"/>
+				<p:inputText size="4" value="#{jogoBean.jogo.v10}" />
+
+				
+				<p:commandButton value="Editar" action="#{jogoBean.editar}" />
+					
+				<p:commandButton value="Listar" action="#{jogoBean.listar}" />
+					
+			</p:panelGrid>
+
+		</h:form>
+
+	</p:panel>
+
+</h:body>
+</html>

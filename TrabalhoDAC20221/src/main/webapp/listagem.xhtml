@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>PÁGINA DE LISTAGEM</title>
+</h:head>
+
+<h:body>
+	<p:panel header="LISTAGEM">
+
+		<h:form>
+		
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+			<p:commandButton value="Novo Jogo"
+				action="index.xhtml" style="margin-bottom:20px;" />			
+
+			<p:dataTable id="tabela"
+				selection="#{jogoBean.listaJogo}"
+				rowKey="#{j.id}" var="j"
+				value="#{jogoBean.listaJogo}">
+				
+				<p:column headerText="ID" style="width:50px;">
+					<h:outputText value="#{j.id}" />
+				</p:column>
+
+				<p:column headerText="Descrição" style="width:80px;">
+					<h:outputText value="#{j.descricao}" />
+				</p:column>
+				
+				<p:column headerText="Data da Criação" style="width:100px;">
+					<h:outputText value="#{j.dataCriacao}" />
+				</p:column>
+				
+				<p:column headerText="V1" style="width:20px;">
+					<h:outputText value="#{j.v1}" />
+				</p:column>
+				
+				<p:column headerText="V2" style="width:20px;">
+					<h:outputText value="#{j.v2}" />
+				</p:column>
+				
+				<p:column headerText="V3" style="width:20px;">
+					<h:outputText value="#{j.v3}" />
+				</p:column>
+				
+				<p:column headerText="V4" style="width:20px;">
+					<h:outputText value="#{j.v4}" />
+				</p:column>
+				
+				<p:column headerText="V5" style="width:20px;">
+					<h:outputText value="#{j.v5}" />
+				</p:column>
+				
+				<p:column headerText="V6" style="width:20px;">
+					<h:outputText value="#{j.v6}" />
+				</p:column>
+				
+				<p:column headerText="V7" style="width:20px;">
+					<h:outputText value="#{j.v7}" />
+				</p:column>
+				
+				<p:column headerText="V8" style="width:20px;">
+					<h:outputText value="#{j.v8}" />
+				</p:column>
+				
+				<p:column headerText="V9" style="width:20px;">
+					<h:outputText value="#{j.v9}" />
+				</p:column>
+				
+				<p:column headerText="V10" style="width:20px;">
+					<h:outputText value="#{j.v10}" />
+				</p:column>
+
+
+				<p:column headerText="Ações" style="width:80px;">
+				
+					<p:commandButton action="edicao.xhtml" icon="ui-icon-pencil"
+						process="@this">
+						<f:setPropertyActionListener value="#{j}"
+							target="#{jogoBean.jogo}" />
+					</p:commandButton>
+
+					<p:commandButton action="#{jogoBean.excluir}"
+						icon="ui-icon-trash" update="tabela" process="@this">
+						<f:setPropertyActionListener value="#{j}"
+							target="#{jogoBean.jogo}" />
+					</p:commandButton>
+					
+					<p:commandButton action="Pares"
+						icon="ui-icon-bullet" update="tabela" process="@this">
+						<f:setPropertyActionListener value="#{j}"
+							target="" />
+					</p:commandButton>
+					
+				</p:column>
+
+			</p:dataTable>
+
+		</h:form>
+
+	</p:panel>
+
+</h:body>
+</html>

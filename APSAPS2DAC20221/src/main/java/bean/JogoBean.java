@@ -20,7 +20,7 @@ public class JogoBean {
 
 	public String salvar() {
 		try {
-			jogo.gerarNumerosAleatorios();//gerando os n�meros aleat�rios
+			jogo.gerarNumerosAleatorios();//gerando os numeros aleatorios
 			JogoDao.salvar(jogo);
 			jogo = new Jogo();
 

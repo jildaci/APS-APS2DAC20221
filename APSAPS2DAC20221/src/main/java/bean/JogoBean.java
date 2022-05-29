@@ -1,4 +1,4 @@
-package bean;
+﻿package bean;
 
 //import java.text.SimpleDateFormat;
 //import java.util.Calendar;
@@ -84,29 +84,5 @@ public class JogoBean {
 		this.listaJogo = listaJogo;
 	}
 
-	public static class testes {
-		public static void main(String[] args) {
-			Random aleatorio = new Random();
-			int valor = aleatorio.nextInt(30) + 1;
-			System.out.println("Número gerado: " + valor);
-		}
-	}
-
-	public static class aleatorio {
-		public static void main(String args[]) {
-			for (int i = 0; i < 10; i++) {
-				int numAleatorio = (int) (Math.random() * 30) + 1;
-				System.out.println("Número: " + numAleatorio);
-			}
-		}
-	}
-
-	//public static class dataHora {
-		//public static void main(String[] args) {
-
-			//String timeStamp = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
-
-			//System.out.println(timeStamp);
-		//}
-	//}
+	
 }
